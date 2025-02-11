@@ -32,8 +32,6 @@ fn send_key(key: u16) {
         let result = SendInput(2, inputs.as_mut_ptr(), size_of::<INPUT>() as i32);
         if result != 2 {
             eprintln!("SendInput failed: only {} events were sent", result);
-        } else {
-            println!("SendInput succeeded: {} events were sent", result);
         }
     }
 }

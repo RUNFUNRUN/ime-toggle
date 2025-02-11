@@ -55,7 +55,7 @@ fn main() {
         _ => {
             eprintln!("Invalid mode: {}", mode);
             eprintln!("Usage: {} <mode>", args[0]);
-            eprintln!("   mode: 'ja' for non-conversion key, 'en' for conversion key");
+            eprintln!("   mode: 'ja' for conversion key, 'en' for non-conversion key");
         }
     }
 }

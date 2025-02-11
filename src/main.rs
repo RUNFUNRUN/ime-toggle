@@ -1,5 +1,5 @@
-use std::env;
-use std::mem::size_of;
+use std::env::args;
+use std::mem::{size_of, zeroed};
 use windows_sys::Win32::UI::Input::KeyboardAndMouse::{
     SendInput, INPUT, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP,
 };
@@ -9,7 +9,7 @@ const VK_NONCONVERT: u16 = 0x1D;
 
 fn send_key(key: u16) {
     unsafe {
-        let mut inputs: [INPUT; 2] = [std::mem::zeroed(); 2];
+        let mut inputs: [INPUT; 2] = [zeroed(); 2];
 
         inputs[0].r#type = INPUT_KEYBOARD;
         inputs[0].Anonymous.ki = KEYBDINPUT {
@@ -37,7 +37,7 @@ fn send_key(key: u16) {
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args: Vec<String> = args().collect();
     if args.len() != 2 {
         eprintln!("Usage: {} <mode>", args[0]);
         eprintln!("   mode: 'ja' for non-conversion key, 'en' for conversion key");

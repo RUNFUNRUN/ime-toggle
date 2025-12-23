@@ -2,6 +2,11 @@
 name = "ime_toggle"
 version = "0.1.0"
 edition = "2021"
+description = "A CLI tool to toggle IME status on Windows"
+license = "MIT"
+repository = "https://github.com/ryota/ime-toggle"
+keywords = ["ime", "windows", "cli", "input", "keyboard"]
+categories = ["command-line-utilities", "os::windows-apis"]
 
 [dependencies]
 windows-sys = { version = "0.59.0", features = [

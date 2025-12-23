@@ -8,13 +8,25 @@ Windowsの設定で変換キー無変換キーをIMEオンオフに指定する�
 
 ![image](https://github.com/user-attachments/assets/633de57d-04fb-4e0a-bd38-7ef3e3053e6e)
 
-## 使い方
+## インストール
+
+crates.io からインストールする場合:
 
 ```sh
+cargo install ime_toggle
+```
+
+ソースコードからビルドする場合:
+
+```sh
+git clone https://github.com/ryota/ime-toggle
+cd ime_toggle
 cargo build --release
 ```
 
-ビルドしたらパスの通ったディレクトリに置けば動作します。
+ビルドされたバイナリは `target/release/ime_toggle.exe` に生成されます。パスの通ったディレクトリに配置して使用してください。
+
+## 使い方
 
 ```sh
 # 全角入力
